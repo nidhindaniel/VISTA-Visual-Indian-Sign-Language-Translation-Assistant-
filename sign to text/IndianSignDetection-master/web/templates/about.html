@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About VISTA - AI-powered ISL translator">
+    <title>About - VISTA</title>
+    <link rel="stylesheet" href="/static/css/style.css?v=5">
+</head>
+
+<body>
+
+    <!-- Particles Background -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Navbar -->
+    <nav class="navbar scrolled">
+        <a href="/" class="nav-logo">VISTA</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/">Home</a></li>
+            <li><a href="/translate">Sign &rarr; Text</a></li>
+            <li><a href="/animate">Text &rarr; Sign</a></li>
+            <li><a href="/#why-vista">Why VISTA</a></li>
+            <li><a href="/about" class="active">About</a></li>
+        </ul>
+        <div class="nav-toggle" onclick="toggleNav()">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <!-- About Hero -->
+    <div class="about-hero">
+        <h1>About <span class="gradient-text">VISTA</span></h1>
+        <p>
+            In India, approximately <strong>63 million individuals</strong> roughly
+            <strong>6.3%</strong> of the population are hard of hearing, a figure
+            projected to rise due to an aging demographic. Although many in this community view
+            their hearing status as a distinct way of life rather than a disability, they
+            frequently encounter significant barriers to social interaction.
+        </p>
+    </div>
+
+    <!-- Mission Section -->
+    <section class="mission-section">
+        <!-- Starfield for Mission -->
+        <canvas id="mission-starfield"></canvas>
+
+        <div class="section-inner">
+            <div class="mission-card fade-in">
+                <h2>Our Mission</h2>
+                <p>
+                    Our mission is to develop a robust and scalable system for the real-time translation
+                    of Indian Sign Language (ISL), accessible without requiring specialized hardware.
+                    We aim to bridge communication gaps through a seamless, bidirectional translation
+                    approach. Our primary focus is creating advanced models capable of converting spoken
+                    or written text into fluid, animated ISL gestures, while simultaneously developing
+                    the capability to accurately interpret dynamic ISL gestures and translate them back
+                    into readable text output.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Mission Starfield (Subtle)
+        (function () {
+            const canvas = document.getElementById('mission-starfield');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let width, height, stars = [];
+
+            function resize() {
+                width = canvas.width = canvas.parentElement.offsetWidth;
+                height = canvas.height = canvas.parentElement.offsetHeight;
+            }
+
+            function initStars() {
+                stars = [];
+                for (let i = 0; i < 40; i++) {
+                    stars.push({
+                        x: Math.random() * width,
+                        y: Math.random() * height,
+                        radius: Math.random() * 1.5,
+                        opacity: Math.random() * 0.8,
+                        speed: Math.random() * 0.15 + 0.05
+                    });
+                }
+            }
+
+            function drawStars() {
+                ctx.clearRect(0, 0, width, height);
+                ctx.fillStyle = "white";
+                stars.forEach(star => {
+                    ctx.beginPath();
+                    ctx.globalAlpha = star.opacity;
+                    ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+                    ctx.fill();
+                    star.y -= star.speed;
+                    if (star.y < 0) star.y = height;
+                });
+                ctx.globalAlpha = 1;
+                requestAnimationFrame(drawStars);
+            }
+
+            window.addEventListener('resize', () => { resize(); initStars(); });
+            resize();
+            initStars();
+            drawStars();
+        })();
+    </script>
+
+    <!-- 3D Divider -->
+    <div class="divider-3d">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,20 C240,80 480,10 720,50 C960,90 1200,30 1440,60 L1440,120 L0,120 Z" fill="#1a1a2e"
+                opacity="0.5" />
+            <path d="M0,50 C200,10 500,80 720,40 C940,0 1200,60 1440,30 L1440,120 L0,120 Z" fill="#141425" />
+            <path d="M0,70 C320,40 640,90 960,50 C1120,35 1300,55 1440,45 L1440,120 L0,120 Z" fill="#0f0f1e" />
+            <path d="M0,90 C360,60 720,100 1080,70 C1260,55 1380,75 1440,65 L1440,120 L0,120 Z"
+                fill="var(--bg-primary)" />
+        </svg>
+        <div class="divider-glow"></div>
+    </div>
+
+    <!-- Tech Stack -->
+    <section class="tech-stack-section">
+        <!-- Starfield for Tech Stack -->
+        <canvas id="tech-starfield"></canvas>
+
+        <div class="section-inner">
+            <div class="section-header fade-in">
+                <h2>Technology Stack</h2>
+                <p>Built with cutting-edge AI and web technologies.</p>
+            </div>
+            <div class="tech-grid">
+                <!-- Row 1 -->
+                <div class="tech-card fade-in" data-tilt>
+                    <div class="tech-card-content">
+                        <div class="tech-icon">&#x1F9E0;</div>
+                        <h3>PyTorch</h3>
+                        <p>Deep learning framework for model training with GPU acceleration.</p>
+                    </div>
+                </div>
+                <div class="tech-card fade-in" data-tilt>
+                    <div class="tech-card-content">
+                        <div class="tech-icon">&#x270B;</div>
+                        <h3>MediaPipe</h3>
+                        <p>Google's hand tracking for real-time 21-point landmark detection.</p>
+                    </div>
+                </div>
+                <div class="tech-card fade-in" data-tilt>
+                    <div class="tech-card-content">
+                        <div class="tech-icon">&#x1F680;</div>
+                        <h3>Flask + WebSocket</h3>
+                        <p>Real-time communication between browser and inference server.</p>
+                    </div>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="tech-card fade-in" data-tilt>
+                    <div class="tech-card-content">
+                        <div class="tech-icon">&#x1F5A5;</div>
+                        <h3>CUDA GPU</h3>
+                        <p>NVIDIA GPU acceleration for fast model training and inference.</p>
+                    </div>
+                </div>
+                <div class="tech-card fade-in" data-tilt>
+                    <div class="tech-card-content">
+                        <div class="tech-icon">&#x1F310;</div>
+                        <h3>WebRTC</h3>
+                        <p>Browser-based camera access for seamless webcam integration.</p>
+                    </div>
+                </div>
+                <div class="tech-card fade-in" data-tilt>
+                    <div class="tech-card-content">
+                        <div class="tech-icon">&#x1F4D0;</div>
+                        <h3>Computer Vision</h3>
+                        <p>OpenCV for image processing and frame manipulation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Tech Stack Spotlight Effect
+        document.querySelectorAll('.tech-card').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--x', `${x}px`);
+                card.style.setProperty('--y', `${y}px`);
+            });
+        });
+
+        // Tech Starfield (Subtle)
+        (function () {
+            const canvas = document.getElementById('tech-starfield');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let width, height, stars = [];
+
+            function resize() {
+                width = canvas.width = canvas.parentElement.offsetWidth;
+                height = canvas.height = canvas.parentElement.offsetHeight;
+            }
+
+            function initStars() {
+                stars = [];
+                for (let i = 0; i < 50; i++) {
+                    stars.push({
+                        x: Math.random() * width,
+                        y: Math.random() * height,
+                        radius: Math.random() * 1.2,
+                        opacity: Math.random(),
+                        speed: Math.random() * 0.2 + 0.05
+                    });
+                }
+            }
+
+            function drawStars() {
+                ctx.clearRect(0, 0, width, height);
+                ctx.fillStyle = "white";
+                stars.forEach(star => {
+                    ctx.beginPath();
+                    ctx.globalAlpha = star.opacity;
+                    ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+                    ctx.fill();
+                    star.y -= star.speed;
+                    if (star.y < 0) star.y = height;
+                });
+                ctx.globalAlpha = 1;
+                requestAnimationFrame(drawStars);
+            }
+
+            window.addEventListener('resize', () => { resize(); initStars(); });
+            resize();
+            initStars();
+            drawStars();
+        })();
+    </script>
+
+    <!-- 3D Divider -->
+    <div class="divider-3d flip">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,60 C240,30 480,90 720,50 C960,10 1200,70 1440,20 L1440,120 L0,120 Z" fill="#1a1a2e"
+                opacity="0.5" />
+            <path d="M0,30 C200,70 500,10 720,50 C940,90 1200,20 1440,55 L1440,120 L0,120 Z" fill="#141425" />
+            <path d="M0,50 C320,80 640,30 960,60 C1120,75 1300,45 1440,55 L1440,120 L0,120 Z" fill="#0f0f1e" />
+            <path d="M0,70 C360,95 720,55 1080,80 C1260,90 1380,70 1440,75 L1440,120 L0,120 Z"
+                fill="var(--bg-primary)" />
+        </svg>
+        <div class="divider-glow"></div>
+    </div>
+
+    <!-- Model Info -->
+    <section class="section">
+        <div class="section-inner">
+            <div class="section-header fade-in">
+                <h2>Model Performance</h2>
+            </div>
+            <div class="stats-row fade-in">
+                <div class="stat-item">
+                    <div class="stat-number">42,000+</div>
+                    <div class="stat-label">Training Images</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">35</div>
+                    <div class="stat-label">Sign Classes (A-Z, 1-9)</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">99.99%</div>
+                    <div class="stat-label">Validation Accuracy</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">203K</div>
+                    <div class="stat-label">Model Parameters</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3D Divider -->
+    <div class="divider-3d">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,20 C240,80 480,10 720,50 C960,90 1200,30 1440,60 L1440,120 L0,120 Z" fill="#1a1a2e"
+                opacity="0.5" />
+            <path d="M0,50 C200,10 500,80 720,40 C940,0 1200,60 1440,30 L1440,120 L0,120 Z" fill="#141425" />
+            <path d="M0,70 C320,40 640,90 960,50 C1120,35 1300,55 1440,45 L1440,120 L0,120 Z" fill="#0f0f1e" />
+            <path d="M0,90 C360,60 720,100 1080,70 C1260,55 1380,75 1440,65 L1440,120 L0,120 Z"
+                fill="var(--bg-primary)" />
+        </svg>
+        <div class="divider-glow"></div>
+    </div>
+
+    <!-- Team Section -->
+    <section class="section">
+        <div class="section-inner">
+            <div class="section-header fade-in">
+                <h2 class="gradient-underline">The Faces Behind <span class="gradient-text">VISTA</span></h2>
+                <p>Meet the creators bringing VISTA to life.</p>
+            </div>
+            <div class="team-grid fade-in">
+                <div class="team-card">
+                    <div class="team-img-wrapper">
+                        <img src="/static/img/team/Nidhin.PNG" alt="Nidhin">
+                    </div>
+                    <h3>Nidhin Daniel Varghese</h3>
+                </div>
+                <div class="team-card">
+                    <div class="team-img-wrapper">
+                        <img src="/static/img/team/Jithin.jpeg" alt="Jithin">
+                    </div>
+                    <h3>Jithin George</h3>
+                </div>
+                <div class="team-card">
+                    <div class="team-img-wrapper">
+                        <img src="/static/img/team/diya.jpeg" alt="Diya">
+                    </div>
+                    <h3>Diya Merin Abraham</h3>
+                </div>
+                <div class="team-card">
+                    <div class="team-img-wrapper">
+                        <img src="/static/img/team/sanju.PNG" alt="Sanju">
+                    </div>
+                    <h3>Sanju Chacko</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mentor Section -->
+    <section class="section">
+        <div class="section-inner">
+            <div class="section-header fade-in">
+                <h2 class="gradient-underline">The Mentor Behind <span class="gradient-text">VISTA</span></h2>
+                <p>Guiding our innovation with expertise.</p>
+            </div>
+            <div class="team-grid fade-in" style="justify-content: center;">
+                <div class="team-card">
+                    <div class="team-img-wrapper">
+                        <img src="/static/img/team/teena.jpeg" alt="Dr. Teena Joseph">
+                    </div>
+                    <h3>Dr. Teena Joseph</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-main">
+            <!-- Brand Column -->
+            <div class="footer-col footer-brand">
+                <div class="footer-logo">VISTA</div>
+                <p class="footer-tagline">Making Indian Sign Language accessible through AI. A hardware-free,
+                    bidirectional translation system.</p>
+                <div class="footer-socials">
+                    <a href="https://github.com" target="_blank" class="social-icon" title="GitHub">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Navigation Column -->
+            <div class="footer-col">
+                <h4 class="footer-heading">Explore</h4>
+                <ul class="footer-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/translate">Translate</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/signs">Sign Library</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact & Newsletter Column -->
+            <div class="footer-col">
+                <h4 class="footer-heading">Get in Touch</h4>
+                <div class="footer-contact">
+                    <div class="contact-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                        <span>Chengannur, Kerala, India</span>
+                    </div>
+                    <div class="contact-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <polyline points="22,6 12,13 2,6" />
+                        </svg>
+                        <span>contact@vistaproject.com</span>
+                    </div>
+                </div>
+                <div class="footer-newsletter">
+                    <h5>Stay Updated</h5>
+                    <form class="newsletter-form" onsubmit="event.preventDefault();">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                                <polyline points="12 5 19 12 12 19" />
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="footer-bottom">
+            <p>&copy; 2026 VISTA. All rights reserved. Made with &#10084;&#65039; in Kerala.</p>
+            <div class="footer-legal">
+                <a href="#">Terms of Service</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        function toggleNav() {
+            document.getElementById('navLinks').classList.toggle('open');
+        }
+
+        // ---- Interactive Particle System ----
+        (function () {
+            const canvas = document.getElementById('particles-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let w, h, particles;
+            const PARTICLE_COUNT = 80;
+            const MOUSE_RADIUS = 120;
+            const REPEL_STRENGTH = 3;
+            let mouse = { x: -9999, y: -9999 };
+
+            function resize() { w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight; }
+            function createParticles() {
+                particles = [];
+                for (let i = 0; i < PARTICLE_COUNT; i++) {
+                    particles.push({ x: Math.random() * w, y: Math.random() * h, r: Math.random() * 1.5 + 0.4, baseDx: (Math.random() - 0.5) * 0.35, baseDy: (Math.random() - 0.5) * 0.35, dx: 0, dy: 0, opacity: Math.random() * 0.45 + 0.1 });
+                }
+            }
+            function draw() {
+                ctx.clearRect(0, 0, w, h);
+                for (const p of particles) {
+                    const ex = p.x - mouse.x, ey = p.y - mouse.y;
+                    const dist = Math.sqrt(ex * ex + ey * ey);
+                    if (dist < MOUSE_RADIUS && dist > 0) {
+                        const force = (1 - dist / MOUSE_RADIUS) * REPEL_STRENGTH;
+                        p.dx += (ex / dist) * force; p.dy += (ey / dist) * force;
+                    }
+                    p.dx = p.dx * 0.92 + p.baseDx * 0.08;
+                    p.dy = p.dy * 0.92 + p.baseDy * 0.08;
+                    p.x += p.dx; p.y += p.dy;
+                    if (p.x < -10) p.x = w + 10; if (p.x > w + 10) p.x = -10;
+                    if (p.y < -10) p.y = h + 10; if (p.y > h + 10) p.y = -10;
+                    let drawOp = p.opacity;
+                    if (dist < MOUSE_RADIUS * 1.5) drawOp = Math.min(p.opacity + 0.25 * (1 - dist / (MOUSE_RADIUS * 1.5)), 0.8);
+                    ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    ctx.fillStyle = 'rgba(200,200,230,' + drawOp + ')'; ctx.fill();
+                }
+                requestAnimationFrame(draw);
+            }
+            document.addEventListener('mousemove', (e) => { mouse.x = e.clientX; mouse.y = e.clientY; });
+            document.addEventListener('mouseleave', () => { mouse.x = -9999; mouse.y = -9999; });
+            resize(); createParticles(); draw();
+            window.addEventListener('resize', () => { resize(); createParticles(); });
+        })();
+    </script>
+
+</body>
+
+</html>

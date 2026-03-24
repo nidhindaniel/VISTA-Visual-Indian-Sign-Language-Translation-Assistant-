@@ -1,0 +1,25 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.env
+.venv
+env.bak/
+venv.bak/
+
+# Project-specific
+# Ignore generated temporary videos
+videos/output.mp4
+videos/temp*.mp4
+temp_output*
+
+# Ignore Hugging Face git internals
+.huggingface/
+
+# Mac OS / Windows
+.DS_Store
+Thumbs.db

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VISTA | Sign Language Translator</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Permanent+Marker&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <!-- Splash Screen -->
+    <div id="splash-screen">
+        <h1 class="vista-splash-text">VISTA</h1>
+    </div>
+
+    <div class="background-mesh"></div>
+
+    <nav class="navbar glass">
+        <div class="logo">
+            <i class="fa-solid fa-hands-asl-interpreting"></i> VISTA
+        </div>
+        <div class="status">
+            <span id="system-status"><i class="fa-solid fa-circle"></i> Online</span>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Input Section -->
+        <section class="card glass input-section">
+            <div class="input-header">
+                <h2>Translation Input</h2>
+            </div>
+            <div class="input-wrapper">
+                <textarea id="text-input" placeholder="Type text or speak..."></textarea>
+                <button id="mic-btn" class="icon-btn" title="Speak">
+                    <i class="fa-solid fa-microphone"></i>
+                </button>
+            </div>
+            <div class="actions">
+                <button id="translate-btn" class="primary-btn">
+                    Translate to Sign <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- Output Section -->
+        <section class="card glass output-section">
+
+            <div class="gloss-display">
+                <h3>Generated Gloss</h3>
+                <div id="gloss-output" class="gloss-container">
+                    <span class="placeholder">Waiting for input...</span>
+                </div>
+            </div>
+
+            <div class="video-container glass-inner">
+                <div id="video-loader" class="loader hidden">
+                    <div class="spinner"></div>
+                    <p>Rendering Translation...</p>
+                </div>
+
+                <!-- Idle/Waiting Video -->
+                <video id="idle-video" autoplay loop muted playsinline
+                    style="width: 100%; height: 100%; object-fit: cover;">
+                    <source src="/videos/idle.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <!-- Result Video -->
+                <video id="sign-video" controls poster="{{ url_for('static', filename='img/poster.png') }}"
+                    style="display:none; width: 100%; height: 100%; object-fit: cover;">
+                    Your browser does not support the video tag.
+                </video>
+
+                <div id="video-placeholder" class="video-placeholder" style="display: none;">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <p>Video Output Area</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="about-container glass">
+            <h2 class="about-title"><i class="fa-solid fa-circle-info"></i> About VISTA</h2>
+            <div class="about-content">
+                <p>In India, approximately 63 million individuals roughly 6.3% of the population are hard of hearing, a
+                    figure projected to rise due to an aging demographic. Although many in this community view their
+                    hearing status as a distinct way of life rather than a disability, they frequently encounter
+                    significant barriers to social interaction.</p>
+                <p>Our mission is to develop a robust and scalable system for the real-time translation of Indian Sign
+                    Language (ISL), accessible without requiring specialized hardware. We aim to bridge communication
+                    gaps through a seamless, bidirectional translation approach. Our primary focus is creating advanced
+                    models capable of converting spoken or written text into fluid, animated ISL gestures, while
+                    simultaneously developing the capability to accurately interpret dynamic ISL gestures and translate
+                    them back into readable text output.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="glass-footer">
+        <p>Made by the Members of Group 15</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>

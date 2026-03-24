@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="VISTA - Two-way AI translator: Text/Audio to Indian Sign Language and ISL Signs to Text in real-time">
+    <title>VISTA - Indian Sign Language Translator</title>
+    <link rel="stylesheet" href="/static/css/style.css?v=5">
+</head>
+
+<body>
+
+    <!-- Particles Background -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <a href="/" class="nav-logo">VISTA</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/" class="active">Home</a></li>
+            <li><a href="/translate">Sign &rarr; Text</a></li>
+            <li><a href="/animate">Text &rarr; Sign</a></li>
+            <li><a href="#why-vista">Why VISTA</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/translate" class="nav-cta">Try It Now</a></li>
+        </ul>
+        <div class="nav-toggle" id="navToggle" onclick="toggleNav()">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="dot"></span>
+                Two-Way AI Sign Language Translator
+            </div>
+            <h1>
+                Bridging the Gap Between<br>
+                <span class="gradient-text">Signs &amp; Words</span>
+            </h1>
+            <p class="hero-description">
+                VISTA is a two-way Indian Sign Language translator. Convert
+                <strong>text or speech into sign language animations</strong>, and translate
+                <strong>live sign language gestures into text</strong> using AI &mdash;
+                all in real-time, with just your webcam and browser.
+            </p>
+            <div class="hero-actions">
+                <a href="/translate" class="btn btn-primary">
+                    Sign &rarr; Text
+                </a>
+                <a href="/animate" class="btn btn-primary">
+                    Text &rarr; Sign
+                </a>
+                <a href="#how-it-works" class="btn btn-secondary">
+                    Learn More
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Two-Way Translation Section -->
+    <section class="two-way-section" id="how-it-works">
+        <canvas id="starfield-canvas"></canvas>
+
+        <!-- Floating Glow Orbs -->
+        <div class="glow-orb glow-orb-1"></div>
+        <div class="glow-orb glow-orb-2"></div>
+        <div class="glow-orb glow-orb-3"></div>
+
+        <div class="section-inner" style="position: relative; z-index: 2;">
+            <div class="section-header fade-in">
+                <h2 class="twoway-title">Two-Way <span class="gradient-text">Translation</span></h2>
+                <p class="twoway-subtitle">VISTA works in both directions &mdash; converting between sign language and
+                    text/audio seamlessly.</p>
+            </div>
+
+            <div class="twoway-grid">
+                <!-- Card 1: Text/Audio → Sign Language -->
+                <div class="twoway-card fade-in">
+                    <div class="twoway-card-glow"></div>
+                    <div class="twoway-icon twoway-icon-blue">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="icon-blue-grad" x1="0" y1="0" x2="48" y2="48">
+                                    <stop offset="0%" stop-color="#6c5ce7" />
+                                    <stop offset="100%" stop-color="#a29bfe" />
+                                </linearGradient>
+                            </defs>
+                            <!-- Speech bubble -->
+                            <path
+                                d="M8 10C8 7.79 9.79 6 12 6H36C38.21 6 40 7.79 40 10V28C40 30.21 38.21 32 36 32H20L12 38V32H12C9.79 32 8 30.21 8 28V10Z"
+                                fill="url(#icon-blue-grad)" opacity="0.2" stroke="url(#icon-blue-grad)"
+                                stroke-width="2" />
+                            <!-- Microphone -->
+                            <rect x="21" y="13" width="6" height="10" rx="3" fill="url(#icon-blue-grad)" />
+                            <path d="M18 21C18 24.31 20.69 27 24 27C27.31 27 30 24.31 30 21"
+                                stroke="url(#icon-blue-grad)" stroke-width="2" stroke-linecap="round" />
+                            <line x1="24" y1="27" x2="24" y2="30" stroke="url(#icon-blue-grad)" stroke-width="2"
+                                stroke-linecap="round" />
+                            <line x1="20" y1="30" x2="28" y2="30" stroke="url(#icon-blue-grad)" stroke-width="2"
+                                stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h3>Text / Audio &rarr; Sign Language</h3>
+                    <p>
+                        Type any English sentence or speak into your microphone, and VISTA converts it into
+                        <strong>ISL gloss notation</strong> and plays the corresponding <strong>sign language
+                            video animations</strong> in sequence. Powered by an advanced NLP engine with
+                        ISL grammar rules and a vocabulary of 150+ sign animations.
+                    </p>
+                    <div class="twoway-card-shine"></div>
+                </div>
+
+                <!-- Animated Connector -->
+                <div class="twoway-connector fade-in">
+                    <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                        <defs>
+                            <linearGradient id="conn-grad" x1="0" y1="0" x2="60" y2="60">
+                                <stop offset="0%" stop-color="#6c5ce7" />
+                                <stop offset="100%" stop-color="#00cec9" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="30" cy="30" r="28" stroke="url(#conn-grad)" stroke-width="2"
+                            fill="rgba(108,92,231,0.08)" />
+                        <path d="M18 30H42M36 24L42 30L36 36M24 24L18 30L24 36" stroke="url(#conn-grad)"
+                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+
+                <!-- Card 2: Sign Language → Text -->
+                <div class="twoway-card fade-in">
+                    <div class="twoway-card-glow"></div>
+                    <div class="twoway-icon twoway-icon-teal">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="icon-teal-grad" x1="0" y1="0" x2="48" y2="48">
+                                    <stop offset="0%" stop-color="#00cec9" />
+                                    <stop offset="100%" stop-color="#55efc4" />
+                                </linearGradient>
+                            </defs>
+                            <!-- Hand -->
+                            <path
+                                d="M24 6C24 6 22 6 22 8V22L18 18C17 17 15 17.5 15 19C15 20 18 26 20 28C22 30 22 34 22 36H34C34 34 36 30 36 26V14C36 12 34 12 33 13V18M33 13V10C33 8 31 8 30 9V16M30 9V8C30 6 28 6 27 7V14M27 7V6C27 4.5 25 4 24 6"
+                                stroke="url(#icon-teal-grad)" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" fill="url(#icon-teal-grad)" fill-opacity="0.15" />
+                            <!-- Signal waves -->
+                            <path d="M38 14C40 16 41 19 41 22" stroke="url(#icon-teal-grad)" stroke-width="1.5"
+                                stroke-linecap="round" opacity="0.6" />
+                            <path d="M40 11C43 14 45 19 45 24" stroke="url(#icon-teal-grad)" stroke-width="1.5"
+                                stroke-linecap="round" opacity="0.35" />
+                        </svg>
+                    </div>
+                    <h3>Sign Language &rarr; Text</h3>
+                    <p>
+                        Show your hand signs to the webcam, and VISTA recognizes them in <strong>real-time</strong>
+                        using MediaPipe hand tracking and a custom neural network. Supports
+                        <strong>35 ISL signs</strong> (A-Z, 1-9) with 99.9% accuracy. Letters are
+                        accumulated into words and sentences automatically.
+                    </p>
+                    <div class="twoway-card-shine"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wave Divider -->
+    <div class="wave-divider">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="wave-back" d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,50 1440,45 L1440,80 L0,80 Z"
+                fill="#1e1e3a" />
+            <path class="wave-mid" d="M0,50 C320,10 640,70 960,35 C1200,10 1380,40 1440,30 L1440,80 L0,80 Z"
+                fill="#1a1a2e" />
+            <path class="wave-front" d="M0,55 C280,75 560,25 840,50 C1120,75 1320,35 1440,45 L1440,80 L0,80 Z"
+                fill="#15152a" />
+        </svg>
+    </div>
+
+    <!-- Stats -->
+    <section class="section">
+        <div class="section-inner">
+            <div class="stats-row fade-in">
+                <div class="stat-item">
+                    <div class="stat-number">35</div>
+                    <div class="stat-label">Signs Supported</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">99.9%</div>
+                    <div class="stat-label">Model Accuracy</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">&lt;50ms</div>
+                    <div class="stat-label">Response Time</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">42K+</div>
+                    <div class="stat-label">Training Images</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wave Divider -->
+    <div class="wave-divider flip">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="wave-back" d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,50 1440,45 L1440,80 L0,80 Z"
+                fill="#1e1e3a" />
+            <path class="wave-mid" d="M0,50 C320,10 640,70 960,35 C1200,10 1380,40 1440,30 L1440,80 L0,80 Z"
+                fill="#1a1a2e" />
+            <path class="wave-front" d="M0,55 C280,75 560,25 840,50 C1120,75 1320,35 1440,45 L1440,80 L0,80 Z"
+                fill="#15152a" />
+        </svg>
+    </div>
+
+    <!-- Core Features -->
+    <section class="core-features-section" id="why-vista">
+        <canvas id="features-starfield"></canvas>
+
+        <!-- Floating Glow Orbs for Core Features -->
+        <div class="cf-glow cf-glow-1"></div>
+        <div class="cf-glow cf-glow-2"></div>
+
+        <div class="section-inner" style="position: relative; z-index: 2;">
+            <div class="section-header fade-in">
+                <h2 class="cf-title">Core <span class="gradient-text">Features</span></h2>
+            </div>
+
+            <div class="cf-grid">
+                <!-- Card 1: Hand Landmark Detection -->
+                <div class="cf-card fade-in">
+                    <div class="cf-card-border"></div>
+                    <div class="cf-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <defs>
+                                <linearGradient id="cf-grad-1" x1="0" y1="0" x2="40" y2="40">
+                                    <stop offset="0%" stop-color="#00cec9" />
+                                    <stop offset="100%" stop-color="#55efc4" />
+                                </linearGradient>
+                            </defs>
+                            <path
+                                d="M20 4C20 4 18 4 18 6V18L14.5 15C13.5 14 12 14.5 12 16C12 17 14.5 22 16.5 24C18.5 26 18.5 29 18.5 31H29C29 29 31 25.5 31 22V11C31 9.5 29 9.5 28 10.5V15M28 10.5V8C28 6.5 26.5 6.5 25.5 7.5V13M25.5 7.5V6.5C25.5 5 24 5 23 6V12M23 6V4.5C23 3.5 21 3 20 4"
+                                stroke="url(#cf-grad-1)" stroke-width="1.8" stroke-linecap="round"
+                                stroke-linejoin="round" fill="url(#cf-grad-1)" fill-opacity="0.12" />
+                            <circle cx="20" cy="18" r="1.5" fill="url(#cf-grad-1)" opacity="0.8" />
+                        </svg>
+                    </div>
+                    <h3>Hand Landmark Detection</h3>
+                    <p>Uses MediaPipe to track 21 hand keypoints in real-time, making recognition immune to backgrounds
+                        and lighting.</p>
+                    <div class="cf-card-shine"></div>
+                </div>
+
+                <!-- Card 2: Lightning Fast -->
+                <div class="cf-card fade-in">
+                    <div class="cf-card-border"></div>
+                    <div class="cf-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <defs>
+                                <linearGradient id="cf-grad-2" x1="0" y1="0" x2="40" y2="40">
+                                    <stop offset="0%" stop-color="#fdcb6e" />
+                                    <stop offset="100%" stop-color="#f39c12" />
+                                </linearGradient>
+                            </defs>
+                            <path d="M22 4L10 22H19L17 36L30 18H21L22 4Z" fill="url(#cf-grad-2)" fill-opacity="0.15"
+                                stroke="url(#cf-grad-2)" stroke-width="1.8" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3>Lightning Fast</h3>
+                    <p>Our lightweight neural network runs inference in under 5ms, enabling smooth real-time translation
+                        at 30+ FPS.</p>
+                    <div class="cf-card-shine"></div>
+                </div>
+
+                <!-- Card 3: 97.5% Accuracy -->
+                <div class="cf-card fade-in">
+                    <div class="cf-card-border"></div>
+                    <div class="cf-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <defs>
+                                <linearGradient id="cf-grad-3" x1="0" y1="0" x2="40" y2="40">
+                                    <stop offset="0%" stop-color="#e17055" />
+                                    <stop offset="100%" stop-color="#fd79a8" />
+                                </linearGradient>
+                            </defs>
+                            <circle cx="20" cy="20" r="14" stroke="url(#cf-grad-3)" stroke-width="1.8"
+                                fill="url(#cf-grad-3)" fill-opacity="0.06" />
+                            <circle cx="20" cy="20" r="4" fill="url(#cf-grad-3)" fill-opacity="0.9" />
+                        </svg>
+                    </div>
+                    <h3>97.5% Accuracy</h3>
+                    <p>Trained on 42,000+ images with advanced data augmentation and 2-phase training for near-perfect
+                        recognition.</p>
+                    <div class="cf-card-shine"></div>
+                </div>
+
+                <!-- Card 4: No Special Hardware -->
+                <div class="cf-card fade-in">
+                    <div class="cf-card-border"></div>
+                    <div class="cf-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <defs>
+                                <linearGradient id="cf-grad-4" x1="0" y1="0" x2="40" y2="40">
+                                    <stop offset="0%" stop-color="#6c5ce7" />
+                                    <stop offset="100%" stop-color="#a29bfe" />
+                                </linearGradient>
+                            </defs>
+                            <rect x="8" y="10" width="24" height="17" rx="3" stroke="url(#cf-grad-4)" stroke-width="1.8"
+                                fill="url(#cf-grad-4)" fill-opacity="0.08" />
+                            <circle cx="20" cy="18" r="5" stroke="url(#cf-grad-4)" stroke-width="1.5"
+                                fill="url(#cf-grad-4)" fill-opacity="0.12" />
+                            <circle cx="20" cy="18" r="2" fill="url(#cf-grad-4)" fill-opacity="0.6" />
+                        </svg>
+                    </div>
+                    <h3>No Special Hardware</h3>
+                    <p>Works with any standard webcam. No depth sensors, gloves, or special equipment required.</p>
+                    <div class="cf-card-shine"></div>
+                </div>
+
+                <!-- Card 5: Indian Sign Language -->
+                <div class="cf-card fade-in">
+                    <div class="cf-card-border"></div>
+                    <div class="cf-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <defs>
+                                <linearGradient id="cf-grad-5" x1="0" y1="0" x2="40" y2="40">
+                                    <stop offset="0%" stop-color="#00b894" />
+                                    <stop offset="100%" stop-color="#00cec9" />
+                                </linearGradient>
+                            </defs>
+                            <circle cx="20" cy="20" r="14" stroke="url(#cf-grad-5)" stroke-width="1.8"
+                                fill="url(#cf-grad-5)" fill-opacity="0.06" />
+                            <path d="M10 20C10 14.477 14.477 10 20 10V30C14.477 30 10 25.523 10 20Z"
+                                fill="url(#cf-grad-5)" fill-opacity="0.2" />
+                        </svg>
+                    </div>
+                    <h3>Indian Sign Language</h3>
+                    <p>Specifically designed for ISL, supporting alphabets A-Z and numbers 1-9 used by the Indian deaf
+                        community.</p>
+                    <div class="cf-card-shine"></div>
+                </div>
+
+                <!-- Card 6: Privacy First -->
+                <div class="cf-card fade-in">
+                    <div class="cf-card-border"></div>
+                    <div class="cf-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <defs>
+                                <linearGradient id="cf-grad-6" x1="0" y1="0" x2="40" y2="40">
+                                    <stop offset="0%" stop-color="#74b9ff" />
+                                    <stop offset="100%" stop-color="#0984e3" />
+                                </linearGradient>
+                            </defs>
+                            <rect x="12" y="17" width="16" height="14" rx="3" stroke="url(#cf-grad-6)"
+                                stroke-width="1.8" fill="url(#cf-grad-6)" fill-opacity="0.08" />
+                            <path d="M15 17V13C15 9.5 17.24 7 20 7C22.76 7 25 9.5 25 13V17" stroke="url(#cf-grad-6)"
+                                stroke-width="1.8" stroke-linecap="round" />
+                            <circle cx="20" cy="23" r="2.5" fill="url(#cf-grad-6)" fill-opacity="0.7" />
+                        </svg>
+                    </div>
+                    <h3>Privacy First</h3>
+                    <p>All processing happens locally on your device. Your camera feed never leaves your machine.</p>
+                    <div class="cf-card-shine"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wave Divider -->
+    <div class="wave-divider">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="wave-back" d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,50 1440,45 L1440,80 L0,80 Z"
+                fill="#1e1e3a" />
+            <path class="wave-mid" d="M0,50 C320,10 640,70 960,35 C1200,10 1380,40 1440,30 L1440,80 L0,80 Z"
+                fill="#1a1a2e" />
+            <path class="wave-front" d="M0,55 C280,75 560,25 840,50 C1120,75 1320,35 1440,45 L1440,80 L0,80 Z"
+                fill="#15152a" />
+        </svg>
+    </div>
+
+    <!-- ISL Info -->
+    <section class="section">
+        <div class="section-inner">
+            <div class="isl-info fade-in">
+                <h2>About Indian Sign Language</h2>
+                <p>
+                    Indian Sign Language (ISL) is a visual-gestural language used by the deaf and
+                    hard-of-hearing community in India. With its own grammar and syntax distinct
+                    from spoken languages, ISL serves as a primary means of communication for
+                    approximately <strong>6.3 million</strong> deaf individuals across the country.
+                </p>
+                <br>
+                <p>
+                    Unlike American Sign Language (ASL) which often uses single-hand gestures,
+                    ISL frequently involves both hands, making it uniquely complex and expressive.
+                    VISTA aims to bridge the communication gap by making ISL accessible to everyone
+                    through AI-powered real-time translation.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wave Divider -->
+    <div class="wave-divider flip">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="wave-back" d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,50 1440,45 L1440,80 L0,80 Z"
+                fill="#1e1e3a" />
+            <path class="wave-mid" d="M0,50 C320,10 640,70 960,35 C1200,10 1380,40 1440,30 L1440,80 L0,80 Z"
+                fill="#1a1a2e" />
+            <path class="wave-front" d="M0,55 C280,75 560,25 840,50 C1120,75 1320,35 1440,45 L1440,80 L0,80 Z"
+                fill="#15152a" />
+        </svg>
+    </div>
+
+    <!-- Use Cases -->
+    <section class="section">
+        <div class="section-inner">
+            <div class="section-header fade-in">
+                <h2>Use Cases</h2>
+                <p>Making communication accessible across every walk of life.</p>
+            </div>
+            <div class="use-cases-grid">
+                <div class="use-case-card fade-in">
+                    <div class="use-case-icon">&#x1F3EB;</div>
+                    <h3>Education</h3>
+                    <p>Enable deaf students to communicate seamlessly in classrooms and online learning.</p>
+                </div>
+                <div class="use-case-card fade-in">
+                    <div class="use-case-icon">&#x1F3E5;</div>
+                    <h3>Healthcare</h3>
+                    <p>Help patients communicate with doctors without an interpreter.</p>
+                </div>
+                <div class="use-case-card fade-in">
+                    <div class="use-case-icon">&#x1F3DB;&#xFE0F;</div>
+                    <h3>Government Services</h3>
+                    <p>Make public services accessible to the deaf community.</p>
+                </div>
+                <div class="use-case-card fade-in">
+                    <div class="use-case-icon">&#x1F4BC;</div>
+                    <h3>Workplace</h3>
+                    <p>Foster inclusive workplaces where everyone can participate equally.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-main">
+            <div class="footer-col footer-brand">
+                <div class="footer-logo">VISTA</div>
+                <p class="footer-tagline">Making Indian Sign Language accessible through AI. A hardware-free,
+                    bidirectional translation system.</p>
+                <div class="footer-socials">
+                    <a href="https://github.com" target="_blank" class="social-icon" title="GitHub">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-heading">Explore</h4>
+                <ul class="footer-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/translate">Translate</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/signs">Sign Library</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-heading">Get in Touch</h4>
+                <div class="footer-contact">
+                    <div class="contact-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                        <span>Chengannur, Kerala, India</span>
+                    </div>
+                    <div class="contact-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <polyline points="22,6 12,13 2,6" />
+                        </svg>
+                        <span>contact@vistaproject.com</span>
+                    </div>
+                </div>
+                <div class="footer-newsletter">
+                    <h5>Stay Updated</h5>
+                    <form class="newsletter-form" onsubmit="event.preventDefault();">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                                <polyline points="12 5 19 12 12 19" />
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 VISTA. All rights reserved. Made with &#10084;&#65039; in Kerala.</p>
+            <div class="footer-legal">
+                <a href="#">Terms of Service</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            document.getElementById('navbar')
+                .classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Mobile nav toggle
+        function toggleNav() {
+            document.getElementById('navLinks').classList.toggle('open');
+        }
+
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // ---- Interactive Particle System ----
+        (function () {
+            const canvas = document.getElementById('particles-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let w, h, particles;
+            const PARTICLE_COUNT = 80;
+            const MOUSE_RADIUS = 120;
+            const REPEL_STRENGTH = 3;
+            let mouse = { x: -9999, y: -9999 };
+
+            function resize() {
+                w = canvas.width = window.innerWidth;
+                h = canvas.height = window.innerHeight;
+            }
+
+            function createParticles() {
+                particles = [];
+                for (let i = 0; i < PARTICLE_COUNT; i++) {
+                    particles.push({
+                        x: Math.random() * w,
+                        y: Math.random() * h,
+                        r: Math.random() * 1.5 + 0.4,
+                        baseDx: (Math.random() - 0.5) * 0.35,
+                        baseDy: (Math.random() - 0.5) * 0.35,
+                        dx: 0, dy: 0,
+                        opacity: Math.random() * 0.45 + 0.1
+                    });
+                }
+            }
+
+            function draw() {
+                ctx.clearRect(0, 0, w, h);
+                for (const p of particles) {
+                    // Mouse repulsion
+                    const ex = p.x - mouse.x;
+                    const ey = p.y - mouse.y;
+                    const dist = Math.sqrt(ex * ex + ey * ey);
+                    if (dist < MOUSE_RADIUS && dist > 0) {
+                        const force = (1 - dist / MOUSE_RADIUS) * REPEL_STRENGTH;
+                        p.dx += (ex / dist) * force;
+                        p.dy += (ey / dist) * force;
+                    }
+
+                    // Apply velocity with friction (drift back to base speed)
+                    p.dx = p.dx * 0.92 + p.baseDx * 0.08;
+                    p.dy = p.dy * 0.92 + p.baseDy * 0.08;
+                    p.x += p.dx;
+                    p.y += p.dy;
+
+                    // Wrap around edges
+                    if (p.x < -10) p.x = w + 10;
+                    if (p.x > w + 10) p.x = -10;
+                    if (p.y < -10) p.y = h + 10;
+                    if (p.y > h + 10) p.y = -10;
+
+                    // Brighten near cursor
+                    let drawOpacity = p.opacity;
+                    if (dist < MOUSE_RADIUS * 1.5) {
+                        drawOpacity = Math.min(p.opacity + 0.25 * (1 - dist / (MOUSE_RADIUS * 1.5)), 0.8);
+                    }
+
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    ctx.fillStyle = 'rgba(200, 200, 230, ' + drawOpacity + ')';
+                    ctx.fill();
+                }
+                requestAnimationFrame(draw);
+            }
+
+            document.addEventListener('mousemove', (e) => {
+                mouse.x = e.clientX;
+                mouse.y = e.clientY;
+            });
+            document.addEventListener('mouseleave', () => {
+                mouse.x = -9999;
+                mouse.y = -9999;
+            });
+
+            resize();
+            createParticles();
+            draw();
+            window.addEventListener('resize', () => { resize(); createParticles(); });
+        })();
+
+        // ---- Starfield for Two-Way Translation Section ----
+        (function () {
+            const sfCanvas = document.getElementById('starfield-canvas');
+            const section = document.querySelector('.two-way-section');
+            if (!sfCanvas || !section) return;
+            const sfCtx = sfCanvas.getContext('2d');
+            const STAR_COUNT = 120;
+            let stars = [];
+            let sw, sh;
+            let isVisible = false;
+
+            function sfResize() {
+                const rect = section.getBoundingClientRect();
+                sw = sfCanvas.width = section.offsetWidth;
+                sh = sfCanvas.height = section.offsetHeight;
+            }
+
+            function createStars() {
+                stars = [];
+                for (let i = 0; i < STAR_COUNT; i++) {
+                    stars.push({
+                        x: Math.random() * sw,
+                        y: Math.random() * sh,
+                        r: Math.random() * 1.2 + 0.3,
+                        baseOpacity: Math.random() * 0.5 + 0.15,
+                        phase: Math.random() * Math.PI * 2,
+                        speed: Math.random() * 0.008 + 0.003
+                    });
+                }
+            }
+
+            function drawStars(time) {
+                if (!isVisible) { requestAnimationFrame(drawStars); return; }
+                sfCtx.clearRect(0, 0, sw, sh);
+                for (const s of stars) {
+                    s.phase += s.speed;
+                    const twinkle = s.baseOpacity + Math.sin(s.phase) * 0.2;
+                    const opacity = Math.max(0.05, Math.min(twinkle, 0.85));
+                    sfCtx.beginPath();
+                    sfCtx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+                    sfCtx.fillStyle = 'rgba(220, 225, 255, ' + opacity + ')';
+                    sfCtx.fill();
+                }
+                requestAnimationFrame(drawStars);
+            }
+
+            // Only animate when section is in viewport
+            const sfObserver = new IntersectionObserver((entries) => {
+                entries.forEach(e => { isVisible = e.isIntersecting; });
+            }, { threshold: 0.05 });
+            sfObserver.observe(section);
+
+            sfResize();
+            createStars();
+            requestAnimationFrame(drawStars);
+            window.addEventListener('resize', () => { sfResize(); createStars(); });
+        })();
+        // ---- Starfield for Core Features Section ----
+        (function () {
+            const sfCanvas = document.getElementById('features-starfield');
+            const section = document.querySelector('.core-features-section');
+            if (!sfCanvas || !section) return;
+            const sfCtx = sfCanvas.getContext('2d');
+            const STAR_COUNT = 100;
+            let stars = [];
+            let sw, sh;
+            let isVisible = false;
+
+            function sfResize() {
+                const rect = section.getBoundingClientRect();
+                sw = sfCanvas.width = section.offsetWidth;
+                sh = sfCanvas.height = section.offsetHeight;
+            }
+
+            function createStars() {
+                stars = [];
+                for (let i = 0; i < STAR_COUNT; i++) {
+                    stars.push({
+                        x: Math.random() * sw,
+                        y: Math.random() * sh,
+                        r: Math.random() * 1.5 + 0.2,
+                        baseOpacity: Math.random() * 0.4 + 0.1,
+                        phase: Math.random() * Math.PI * 2,
+                        speed: Math.random() * 0.005 + 0.002
+                    });
+                }
+            }
+
+            function drawStars(time) {
+                if (!isVisible) { requestAnimationFrame(drawStars); return; }
+                sfCtx.clearRect(0, 0, sw, sh);
+                for (const s of stars) {
+                    s.phase += s.speed;
+                    const twinkle = s.baseOpacity + Math.sin(s.phase) * 0.2;
+                    const opacity = Math.max(0.05, Math.min(twinkle, 0.75));
+                    sfCtx.beginPath();
+                    sfCtx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+                    sfCtx.fillStyle = 'rgba(200, 240, 255, ' + opacity + ')';
+                    sfCtx.fill();
+                }
+                requestAnimationFrame(drawStars);
+            }
+
+            // Only animate when section is in viewport
+            const sfObserver = new IntersectionObserver((entries) => {
+                entries.forEach(e => { isVisible = e.isIntersecting; });
+            }, { threshold: 0.05 });
+            sfObserver.observe(section);
+
+            sfResize();
+            createStars();
+            requestAnimationFrame(drawStars);
+            window.addEventListener('resize', () => { sfResize(); createStars(); });
+        })();
+    </script>
+
+</body>
+
+</html>
