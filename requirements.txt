@@ -1,9 +1,0 @@
-Flask
-Flask-SocketIO
-opencv-python-headless
-numpy
-torch
-mediapipe
-spacy
-moviepy
-imageio-ffmpeg
