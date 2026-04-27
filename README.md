@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>🌟 VISTA 🌟</h1>
+  <h1> VISTA </h1>
   <h3>Visual Indian Sign Language Translation Assistant</h3>
 
   <p align="center">
@@ -27,11 +27,11 @@ By leveraging cutting-edge deep learning, computer vision, and natural language 
 
 ## ✨ Features
 
-- **🤲 Real-Time Sign-to-Text Recognition:** Uses your webcam to capture hand gestures, extracts precise landmarks via MediaPipe, and classifies them into text using a custom-trained, lightweight PyTorch Neural Network.
-- **💬 Text/Audio-to-Sign Animation:** Translates English text or voice input into grammatically correct ISL Gloss structures using advanced NLP algorithms, then concatenates pre-recorded sign videos into a seamless, fluid animation.
-- **⚡ High-Performance Architecture:** Inference is heavily optimized using PyTorch. Designed for smooth, low-latency translation even on consumer-grade hardware.
-- **🎨 Premium Web Interface:** Beautiful, responsive UI built with Vanilla CSS, dynamic micro-animations, and a responsive glassmorphism aesthetic.
-- **🌐 Hugging Face Ready:** Configured and ready to be deployed as a Hugging Face Space for widespread accessibility.
+- **Real-Time Sign-to-Text Recognition:** Uses your webcam to capture hand gestures, extracts precise landmarks via MediaPipe, and classifies them into text using a custom-trained, lightweight PyTorch Neural Network.
+- **Text/Audio-to-Sign Animation:** Translates English text or voice input into grammatically correct ISL Gloss structures using advanced NLP algorithms, then concatenates pre-recorded sign videos into a seamless, fluid animation.
+- **High-Performance Architecture:** Inference is heavily optimized using PyTorch. Designed for smooth, low-latency translation even on consumer-grade hardware.
+- **Premium Web Interface:** Beautiful, responsive UI built with Vanilla CSS, dynamic micro-animations, and a responsive glassmorphism aesthetic.
+- **Hugging Face Ready:** Configured and ready to be deployed as a Hugging Face Space for widespread accessibility.
 
 ---
 
