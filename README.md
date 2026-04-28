@@ -1,5 +1,5 @@
 <div align="center">
-  <h1> VISTA </h1>
+  <h1>🌟 VISTA 🌟</h1>
   <h3>Visual Indian Sign Language Translation Assistant</h3>
 
   <p align="center">
@@ -27,11 +27,11 @@ By leveraging cutting-edge deep learning, computer vision, and natural language 
 
 ## ✨ Features
 
-- **Real-Time Sign-to-Text Recognition:** Uses your webcam to capture hand gestures, extracts precise landmarks via MediaPipe, and classifies them into text using a custom-trained, lightweight PyTorch Neural Network.
-- **Text/Audio-to-Sign Animation:** Translates English text or voice input into grammatically correct ISL Gloss structures using advanced NLP algorithms, then concatenates pre-recorded sign videos into a seamless, fluid animation.
-- **High-Performance Architecture:** Inference is heavily optimized using PyTorch. Designed for smooth, low-latency translation even on consumer-grade hardware.
-- **Premium Web Interface:** Beautiful, responsive UI built with Vanilla CSS, dynamic micro-animations, and a responsive glassmorphism aesthetic.
-- **Hugging Face Ready:** Configured and ready to be deployed as a Hugging Face Space for widespread accessibility.
+- **🤲 Real-Time Sign-to-Text Recognition:** Uses your webcam to capture hand gestures, extracts precise landmarks via MediaPipe, and classifies them into text using a custom-trained, lightweight PyTorch Neural Network.
+- **💬 Text/Audio-to-Sign Animation:** Translates English text or voice input into grammatically correct ISL Gloss structures using advanced NLP algorithms, then concatenates pre-recorded sign videos into a seamless, fluid animation.
+- **⚡ High-Performance Architecture:** Inference is heavily optimized using PyTorch. Designed for smooth, low-latency translation even on consumer-grade hardware.
+- **🎨 Premium Web Interface:** Beautiful, responsive UI built with Vanilla CSS, dynamic micro-animations, and a responsive glassmorphism aesthetic.
+- **🌐 Hugging Face Ready:** Configured and ready to be deployed as a Hugging Face Space for widespread accessibility.
 
 ---
 
@@ -81,7 +81,7 @@ python app.py
 
 **To launch the Live Sign Detection interface:**
 ```bash
-cd "sign to text/IndianSignDetection-master/web"
+cd "sign_to_text/web"
 python app.py
 ```
 *The app will run on `http://localhost:5000/`.*
@@ -96,14 +96,13 @@ VISTA/
 ├── advanced_text_to_gloss.py   # NLP algorithms for translating English to ISL Gloss
 ├── text_to_gloss.py            # Baseline gloss engine
 ├── sign_language_player.py     # Video concatenation and rendering engine
-├── sign to text/
-│   └── IndianSignDetection-master/
-│       ├── Train.py            # PyTorch Model training script for Landmark classifier
-│       ├── SignRecognition.py  # Inference script for real-time sign detection
-│       └── web/
-│           ├── app.py          # Flask interface for live Sign-to-Text detection
-│           ├── static/         # CSS, JS, and Images for the web app
-│           └── templates/      # HTML views (index.html, translate.html, etc.)
+├── sign_to_text/
+│   ├── Train.py            # PyTorch Model training script for Landmark classifier
+│   ├── SignRecognition.py  # Inference script for real-time sign detection
+│   └── web/
+│       ├── app.py          # Flask interface for live Sign-to-Text detection
+│       ├── static/         # CSS, JS, and Images for the web app
+│       └── templates/      # HTML views (index.html, translate.html, etc.)
 ├── videos/                     # Asset folder containing dictionary of ISL sign videos
 └── Seamless_Looping_Idle_Animation_Creation.mp4 # Example Idle Animation
 ```
