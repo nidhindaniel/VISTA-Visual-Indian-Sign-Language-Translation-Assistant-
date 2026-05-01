@@ -23,7 +23,7 @@ MODEL_DIR = os.path.join(DATA_DIR, "Model")
 MODEL_PATH = os.path.join(MODEL_DIR, "sign_model_landmarks.pth")
 
 # VISTA project root (for text-to-animation modules)
-VISTA_ROOT = os.path.abspath(os.path.join(BASE_DIR, '..', '..', '..'))
+VISTA_ROOT = os.path.abspath(os.path.join(BASE_DIR, '..', '..'))
 if VISTA_ROOT not in sys.path:
     sys.path.insert(0, VISTA_ROOT)
 
