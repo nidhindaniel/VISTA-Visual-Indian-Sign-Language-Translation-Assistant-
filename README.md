@@ -1,12 +1,5 @@
 ---
-title: VISTA - Visual Indian Sign Language Translation Assistant
-emoji: 🌟
-colorFrom: blue
-colorTo: indigo
-sdk: docker
-pinned: false
-app_port: 7860
----
+
 
 <div align="center">
   <h1>  VISTA </h1>
