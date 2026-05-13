@@ -120,7 +120,7 @@ VISTA/
 3. **Inference:** A 4-layer fully connected network (`LandmarkClassifier` built in PyTorch) runs inference, identifying the most probable sign with an accuracy upward of 91%.
 
 ### Text/Speech Translation (Text -> Vision)
-1. **NLP Processing:** User provides text/audio. `advanced_text_to_gloss.py` strips stop words, normalizes stems, and rearranges English (SVO grammar) to match the SOV (Subject-Object-Verb) grammatical constraints of Indian Sign Language.
+1. **NLP Processing:** User provides text/audio. `advanced_text_to_gloss.py` strips stop words, normalizes stems, and rearranges English (SVO grammar) to match the SOV (Subject-Object-Verb) grammatical constraints of Indian Sign Language (ISL).
 2. **Video Assembly:** `sign_language_player.py` references the generated gloss array, searches the `videos/` database, and concatenates the corresponding ISL sign clips into a cohesive animation stream delivered to the frontend.
 
 ---
