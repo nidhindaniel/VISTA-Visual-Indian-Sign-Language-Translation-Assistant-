@@ -38,9 +38,9 @@
 
 # 🌟 Overview
 
-## **VISTA — Visual Indian Sign Language Translation Assistant**
+## VISTA — Visual Indian Sign Language Translation Assistant
 
-VISTA is an advanced AI-powered system designed to bridge communication gaps through **real-time Indian Sign Language (ISL) translation**.
+VISTA is an advanced AI-powered system designed to bridge communication gaps through real-time Indian Sign Language (ISL) translation.
 
 The project combines:
 
@@ -49,13 +49,13 @@ The project combines:
 - 🎙️ Natural Language Processing
 - ⚡ Real-Time Inference
 
-to create a seamless **two-way communication platform** between spoken/written language and Indian Sign Language.
+to create a seamless two-way communication platform between spoken/written language and Indian Sign Language.
 
 ---
 
 # 💡 Why VISTA Matters
 
-Millions of people rely on sign language as their primary mode of communication, yet digital accessibility tools remain limited — especially for **Indian Sign Language (ISL)**.
+Millions of people rely on sign language as their primary mode of communication, yet digital accessibility tools remain limited — especially for Indian Sign Language (ISL).
 
 VISTA aims to create a more inclusive future by enabling:
 
@@ -72,32 +72,14 @@ VISTA aims to create a more inclusive future by enabling:
 
 | Feature | Description |
 |---|---|
-| 🎥 **Real-Time Sign Recognition** | Detects hand gestures live through webcam input |
-| 🧠 **Deep Learning Powered** | Custom PyTorch neural network for gesture classification |
-| 👁️ **MediaPipe Landmark Tracking** | Extracts precise 3D hand landmarks |
-| 🔊 **Speech/Text to Sign** | Converts text/audio into ISL gloss animations |
-| 🎬 **Dynamic Video Stitching** | Combines ISL sign clips into smooth animations |
-| ⚡ **Low Latency Inference** | Optimized for real-time interaction |
-| 🎨 **Modern UI** | Responsive frontend with smooth animations |
-| 🌐 **Deployment Ready** | Hugging Face compatible architecture |
-
-</div>
-
----
-
-# 📸 Project Preview
-
-<div align="center">
-
-## 🖥️ Sign Detection Interface
-
-<img src="https://placehold.co/900x450/111827/00D9FF?text=Upload+Your+Sign+Detection+Screenshot+Here"/>
-
-<br><br>
-
-## 🎬 Text to Sign Animation
-
-<img src="https://placehold.co/900x450/111827/00D9FF?text=Upload+Your+Text-to-Sign+GIF+or+Screenshot+Here"/>
+| 🎥 Real-Time Sign Recognition | Detects hand gestures live through webcam input |
+| 🧠 Deep Learning Powered | Custom PyTorch neural network for gesture classification |
+| 👁️ MediaPipe Landmark Tracking | Extracts precise 3D hand landmarks |
+| 🔊 Speech/Text to Sign | Converts text/audio into ISL gloss animations |
+| 🎬 Dynamic Video Stitching | Combines ISL sign clips into smooth animations |
+| ⚡ Low Latency Inference | Optimized for real-time interaction |
+| 🎨 Modern UI | Responsive frontend with smooth animations |
+| 🌐 Deployment Ready | Hugging Face compatible architecture |
 
 </div>
 
@@ -266,7 +248,7 @@ VISTA/
 ## ✋ Sign Recognition System
 
 ### Step 1 — Landmark Detection
-MediaPipe extracts **21 three-dimensional hand landmarks** from live webcam frames.
+MediaPipe extracts 21 three-dimensional hand landmarks from live webcam frames.
 
 ### Step 2 — Feature Engineering
 Coordinates are normalized into a structured feature vector.
@@ -285,7 +267,7 @@ The predicted gesture is converted into readable text.
 Text or speech input is captured and normalized.
 
 ### Step 2 — ISL Grammar Transformation
-English grammar is converted into **Indian Sign Language Gloss structure**.
+English grammar is converted into Indian Sign Language Gloss structure.
 
 ### Step 3 — Video Retrieval
 Relevant ISL sign clips are retrieved from the video database.
@@ -315,19 +297,6 @@ Videos are concatenated dynamically into a seamless sign animation.
 - 🎥 Real-Time Translation Systems
 - 📱 Accessibility Mobile Apps
 - 🤖 Human-AI Interaction Systems
-
----
-
-# 🤝 Contributors
-
-<div align="center">
-
-| Name | Role |
-|---|---|
-| 👨‍💻 Jithin George | AI/ML Development |
-| 👨‍💻 Team VISTA | Research & Development |
-
-</div>
 
 ---
 
