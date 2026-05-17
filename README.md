@@ -1,130 +1,356 @@
----
-
-
 <div align="center">
-  <h1>  VISTA </h1>
-  <h3>Visual Indian Sign Language Translation Assistant</h3>
 
-  <p align="center">
-    <strong>Breaking down communication barriers with real-time, two-way Indian Sign Language translation powered by Deep Learning.</strong>
-  </p>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0F2027,50:203A43,100:2C5364&height=260&section=header&text=VISTA&fontSize=80&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Visual%20Indian%20Sign%20Language%20Translation%20Assistant&descAlignY=60&descSize=18"/>
 
-  <p align="center">
-    <a href="#features">Features</a> •
-    <a href="#how-it-works">How It Works</a> •
-    <a href="#tech-stack">Tech Stack</a> •
-    <a href="#installation">Installation</a> •
-    <a href="#project-structure">Structure</a>
-  </p>
+<p align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Poppins&weight=600&size=28&pause=1000&color=00D9FF&center=true&vCenter=true&width=900&lines=Real-Time+Indian+Sign+Language+Translation;AI+Powered+Gesture+Recognition;Deep+Learning+%2B+Computer+Vision+%2B+NLP;Breaking+Communication+Barriers+with+AI" />
+</p>
+
+<p align="center">
+  <a href="#">
+    <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge"/>
+  </a>
+  <a href="#">
+    <img src="https://img.shields.io/badge/Python-3.10-blue?style=for-the-badge&logo=python"/>
+  </a>
+  <a href="#">
+    <img src="https://img.shields.io/badge/Framework-Flask-black?style=for-the-badge&logo=flask"/>
+  </a>
+  <a href="#">
+    <img src="https://img.shields.io/badge/DeepLearning-PyTorch-red?style=for-the-badge&logo=pytorch"/>
+  </a>
+  <a href="#">
+    <img src="https://img.shields.io/badge/ComputerVision-OpenCV-green?style=for-the-badge&logo=opencv"/>
+  </a>
+</p>
+
+<p align="center">
+  <a href="#-features">Features</a> •
+  <a href="#-ai-pipeline">AI Pipeline</a> •
+  <a href="#-tech-stack">Tech Stack</a> •
+  <a href="#-installation">Installation</a> •
+  <a href="#-project-structure">Structure</a>
+</p>
+
 </div>
 
 ---
 
-## 📖 Overview
+# 🌟 Overview
 
-**VISTA** (Visual Indian Sign Language Translation Assistant) is an advanced, end-to-end web application that provides seamless, real-time two-way translation between spoken/written language and Indian Sign Language (ISL). 
+## **VISTA — Visual Indian Sign Language Translation Assistant**
 
-By leveraging cutting-edge deep learning, computer vision, and natural language processing, VISTA allows users to translate text or voice inputs into highly accurate ISL gloss animations, and can detect real-time ISL gestures via webcam to convert them back into readable text.
+VISTA is an advanced AI-powered system designed to bridge communication gaps through **real-time Indian Sign Language (ISL) translation**.
 
----
+The project combines:
 
-## ✨ Features
+- 🧠 Deep Learning
+- 👁️ Computer Vision
+- 🎙️ Natural Language Processing
+- ⚡ Real-Time Inference
 
-- **Real-Time Sign-to-Text Recognition:** Uses your webcam to capture hand gestures, extracts precise landmarks via MediaPipe, and classifies them into text using a custom-trained, lightweight PyTorch Neural Network.
-- **Text/Audio-to-Sign Animation:** Translates English text or voice input into grammatically correct ISL Gloss structures using advanced NLP algorithms, then concatenates pre-recorded sign videos into a seamless, fluid animation.
-- **High-Performance Architecture:** Inference is heavily optimized using PyTorch. Designed for smooth, low-latency translation even on consumer-grade hardware.
-- **Premium Web Interface:** Beautiful, responsive UI built with Vanilla CSS, dynamic micro-animations, and a responsive glassmorphism aesthetic.
-- **Hugging Face Ready:** Configured and ready to be deployed as a Hugging Face Space for widespread accessibility.
-
----
-
-## 🛠 Tech Stack
-
-### Core Technologies
-- **Python 3.x**
-- **Flask**: Robust backend framework serving API endpoints and web templates.
-
-### Machine Learning & Computer Vision
-- **PyTorch**: Framework for defining, training, and running the lightweight fully-connected neural network.
-- **MediaPipe**: For high-accuracy, real-time hand landmark extraction.
-- **OpenCV**: Handles video capturing, processing, and output rendering.
-- **NumPy & Pandas**: Data manipulation and feature extraction.
-
-### Frontend
-- **HTML5 & Vanilla CSS**: Custom-tailored design system with modern typography and animations.
-- **JavaScript (ES6)**: Real-time interactions, API handling, and asynchronous video rendering.
+to create a seamless **two-way communication platform** between spoken/written language and Indian Sign Language.
 
 ---
 
-## 🚀 Installation & Setup
+# 💡 Why VISTA Matters
 
-### Prerequisites
-Make sure you have **Python 3.8+** installed on your system.
+Millions of people rely on sign language as their primary mode of communication, yet digital accessibility tools remain limited — especially for **Indian Sign Language (ISL)**.
 
-### 1. Clone the Repository
+VISTA aims to create a more inclusive future by enabling:
+
+- 🗣️ Speech/Text → ISL Translation
+- ✋ ISL Gesture → Text Recognition
+- ⚡ Real-time communication assistance
+- 🌍 Accessible AI-driven interaction systems
+
+---
+
+# ✨ Features
+
+<div align="center">
+
+| Feature | Description |
+|---|---|
+| 🎥 **Real-Time Sign Recognition** | Detects hand gestures live through webcam input |
+| 🧠 **Deep Learning Powered** | Custom PyTorch neural network for gesture classification |
+| 👁️ **MediaPipe Landmark Tracking** | Extracts precise 3D hand landmarks |
+| 🔊 **Speech/Text to Sign** | Converts text/audio into ISL gloss animations |
+| 🎬 **Dynamic Video Stitching** | Combines ISL sign clips into smooth animations |
+| ⚡ **Low Latency Inference** | Optimized for real-time interaction |
+| 🎨 **Modern UI** | Responsive frontend with smooth animations |
+| 🌐 **Deployment Ready** | Hugging Face compatible architecture |
+
+</div>
+
+---
+
+# 📸 Project Preview
+
+<div align="center">
+
+## 🖥️ Sign Detection Interface
+
+<img src="https://placehold.co/900x450/111827/00D9FF?text=Upload+Your+Sign+Detection+Screenshot+Here"/>
+
+<br><br>
+
+## 🎬 Text to Sign Animation
+
+<img src="https://placehold.co/900x450/111827/00D9FF?text=Upload+Your+Text-to-Sign+GIF+or+Screenshot+Here"/>
+
+</div>
+
+---
+
+# 🧠 AI Pipeline
+
+# ✋ Sign → Text Translation
+
+```text
+Webcam Feed
+      ↓
+MediaPipe Hand Tracking
+      ↓
+21 Hand Landmark Extraction
+      ↓
+Feature Vector Generation
+      ↓
+PyTorch Neural Network
+      ↓
+Predicted Sign Output
+      ↓
+Readable Text
+```
+
+---
+
+# 🗣️ Text/Speech → Sign Translation
+
+```text
+Text / Voice Input
+        ↓
+Speech Recognition (Optional)
+        ↓
+NLP Processing
+        ↓
+ISL Gloss Conversion
+        ↓
+Video Matching Engine
+        ↓
+Video Stitching
+        ↓
+Animated Sign Language Output
+```
+
+---
+
+# ⚙️ Tech Stack
+
+<div align="center">
+
+## 🚀 Core Technologies
+
+<img src="https://skillicons.dev/icons?i=python,flask,js,html,css"/>
+
+---
+
+## 🧠 AI / Machine Learning
+
+<img src="https://skillicons.dev/icons?i=pytorch,tensorflow"/>
+
+<p>
+  <img src="https://img.shields.io/badge/MediaPipe-FF6F00?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white"/>
+  <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy"/>
+  <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas"/>
+</p>
+
+---
+
+## 🎨 Frontend
+
+<img src="https://skillicons.dev/icons?i=html,css,js"/>
+
+</div>
+
+---
+
+# 🚀 Installation
+
+## 📋 Prerequisites
+
+Make sure the following are installed:
+
+- Python 3.8+
+- pip
+- Git
+
+---
+
+## 1️⃣ Clone Repository
+
 ```bash
 git clone https://github.com/nidhindaniel/VISTA-Visual-Indian-Sign-Language-Translation-Assistant-.git
+
 cd VISTA-Visual-Indian-Sign-Language-Translation-Assistant-
 ```
 
-### 2. Install Dependencies
+---
+
+## 2️⃣ Install Dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
-*(Note: Make sure PyTorch, OpenCV, Flask, and MediaPipe are installed if a `requirements.txt` is missing)*
-
-### 3. Run the Application
-VISTA includes a modular environment. Depending on what you want to launch:
-
-**To launch the complete application (Text to Sign Video):**
-```bash
-python app.py
-```
-*The app will run on `http://localhost:7860/`.*
-
-**To launch the Live Sign Detection interface:**
-```bash
-cd "sign_to_text/web"
-python app.py
-```
-*The app will run on `http://localhost:5000/`.*
 
 ---
 
-## 📁 Project Structure
+## 3️⃣ Run Main Application
+
+```bash
+python app.py
+```
+
+Application runs on:
+
+```text
+http://localhost:7860/
+```
+
+---
+
+## 4️⃣ Run Live Sign Detection Module
+
+```bash
+cd sign_to_text/web
+
+python app.py
+```
+
+Application runs on:
+
+```text
+http://localhost:5000/
+```
+
+---
+
+# 📂 Project Structure
 
 ```text
 VISTA/
-├── app.py                      # Main entry for Text-to-Gloss Video generation API
-├── advanced_text_to_gloss.py   # NLP algorithms for translating English to ISL Gloss
-├── text_to_gloss.py            # Baseline gloss engine
-├── sign_language_player.py     # Video concatenation and rendering engine
+│
+├── app.py
+├── advanced_text_to_gloss.py
+├── text_to_gloss.py
+├── sign_language_player.py
+│
 ├── sign_to_text/
-│   ├── Train.py            # PyTorch Model training script for Landmark classifier
-│   ├── SignRecognition.py  # Inference script for real-time sign detection
+│   ├── Train.py
+│   ├── SignRecognition.py
 │   └── web/
-│       ├── app.py          # Flask interface for live Sign-to-Text detection
-│       ├── static/         # CSS, JS, and Images for the web app
-│       └── templates/      # HTML views (index.html, translate.html, etc.)
-├── videos/                     # Asset folder containing dictionary of ISL sign videos
-└── Seamless_Looping_Idle_Animation_Creation.mp4 # Example Idle Animation
+│       ├── app.py
+│       ├── static/
+│       └── templates/
+│
+├── videos/
+│
+└── Seamless_Looping_Idle_Animation_Creation.mp4
 ```
 
 ---
 
-## How the AI Works
+# 🔬 How The AI Works
 
-### Sign Detection (Vision -> Text)
-1. **Feature Extraction:** A user gestures into the webcam. `MediaPipe` calculates 21 3D landmarks for the hand.
-2. **Preprocessing:** Coordinates are normalized and transformed into a 63-dimensional feature array (x, y, z for each point).
-3. **Inference:** A 4-layer fully connected network (`LandmarkClassifier` built in PyTorch) runs inference, identifying the most probable sign with an accuracy upward of 91%.
+## ✋ Sign Recognition System
 
-### Text/Speech Translation (Text -> Vision)
-1. **NLP Processing:** User provides text/audio. `advanced_text_to_gloss.py` strips stop words, normalizes stems, and rearranges English (SVO grammar) to match the SOV (Subject-Object-Verb) grammatical constraints of Indian Sign Language (ISL).
-2. **Video Assembly:** `sign_language_player.py` references the generated gloss array, searches the `videos/` database, and concatenates the corresponding ISL sign clips into a cohesive animation stream delivered to the frontend.
+### Step 1 — Landmark Detection
+MediaPipe extracts **21 three-dimensional hand landmarks** from live webcam frames.
+
+### Step 2 — Feature Engineering
+Coordinates are normalized into a structured feature vector.
+
+### Step 3 — Neural Network Inference
+A lightweight fully connected neural network predicts the most probable sign in real-time.
+
+### Step 4 — Text Generation
+The predicted gesture is converted into readable text.
+
+---
+
+## 🗣️ NLP Translation System
+
+### Step 1 — Input Processing
+Text or speech input is captured and normalized.
+
+### Step 2 — ISL Grammar Transformation
+English grammar is converted into **Indian Sign Language Gloss structure**.
+
+### Step 3 — Video Retrieval
+Relevant ISL sign clips are retrieved from the video database.
+
+### Step 4 — Animation Generation
+Videos are concatenated dynamically into a seamless sign animation.
+
+---
+
+# 📈 Future Roadmap
+
+- [ ] Sentence-level ISL translation
+- [ ] Transformer-based gesture recognition
+- [ ] Mobile app deployment
+- [ ] Multi-language support
+- [ ] Hugging Face deployment
+- [ ] Real-time conversational assistant
+- [ ] 3D avatar-based sign rendering
+
+---
+
+# 🌍 Potential Applications
+
+- 🏫 Educational Platforms
+- 🏥 Healthcare Communication
+- 🏢 Public Service Accessibility
+- 🎥 Real-Time Translation Systems
+- 📱 Accessibility Mobile Apps
+- 🤖 Human-AI Interaction Systems
+
+---
+
+# 🤝 Contributors
+
+<div align="center">
+
+| Name | Role |
+|---|---|
+| 👨‍💻 Jithin George | AI/ML Development |
+| 👨‍💻 Team VISTA | Research & Development |
+
+</div>
+
+---
+
+# 📜 License
+
+This project is intended for educational and research purposes.
+
+---
+
+# 🌟 Support The Project
+
+If you found this project useful:
+
+⭐ Star the repository  
+🍴 Fork the project  
+🧠 Contribute ideas and improvements  
 
 ---
 
 <div align="center">
-  <b>Built with ❤️ for an accessible future.</b>
+
+## 💙 Built for an Accessible Future
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:2C5364,50:203A43,100:0F2027&height=120&section=footer"/>
+
 </div>
