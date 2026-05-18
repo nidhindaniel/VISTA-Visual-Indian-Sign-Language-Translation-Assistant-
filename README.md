@@ -295,7 +295,6 @@ Videos are concatenated dynamically into a seamless sign animation.
 - 🏥 Healthcare Communication
 - 🏢 Public Service Accessibility
 - 🎥 Real-Time Translation Systems
-- 📱 Accessibility Mobile Apps
 - 🤖 Human-AI Interaction Systems
 
 ---
@@ -312,7 +311,6 @@ If you found this project useful:
 
 ⭐ Star the repository  
 🍴 Fork the project  
-🧠 Contribute ideas and improvements  
 
 ---
 
