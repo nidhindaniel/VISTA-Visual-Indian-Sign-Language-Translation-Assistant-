@@ -162,7 +162,7 @@ Animated Sign Language Output
 
 ## 📋 Prerequisites
 
-Make sure the following are installed:
+Make sure the following are Installed:
 
 - Python 3.8+
 - pip
